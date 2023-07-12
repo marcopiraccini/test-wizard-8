@@ -1,0 +1,13 @@
+CREATE TABLE pets (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    price REAL NOT NULL
+);
+
+CREATE TABLE sales (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    pet_id INTEGER NOT NULL,
+    date DATE NOT NULL,
+    price REAL NOT NULL,
+    FOREIGN KEY (pet_id) REFERENCES pets(id)
+);
